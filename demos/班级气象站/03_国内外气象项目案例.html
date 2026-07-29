@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国内外气象项目案例</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#0ea5e9; --soft:#ecfeff; --line:#e5e7eb;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f8fafc; line-height:1.85; padding:32px 16px;}
+  .page{max-width:840px; margin:0 auto; background:#fff; padding:40px 44px; border-radius:14px;
+        box-shadow:0 4px 24px rgba(0,0,0,.06);}
+  h1{font-size:24px; margin:0 0 6px; color:var(--accent);}
+  .meta{color:var(--sub); font-size:13px; margin-bottom:20px; padding-bottom:12px; border-bottom:1px dashed var(--line);}
+  .tag{display:inline-block; background:var(--accent); color:#fff; font-size:12px; padding:2px 10px; border-radius:20px; margin-bottom:10px;}
+  .case{border:1px solid var(--line); border-radius:12px; padding:18px 22px; margin:18px 0;}
+  .case h2{margin:0 0 4px; font-size:18px; color:var(--ink);}
+  .loc{display:inline-block; font-size:12px; padding:2px 10px; border-radius:20px; margin-bottom:10px;}
+  .loc.cn{background:#fee2e2; color:#b91c1c;}
+  .loc.intl{background:#dcfce7; color:#15803d;}
+  .box{background:var(--soft); border-radius:8px; padding:10px 14px; margin:10px 0; font-size:14.5px;}
+  .box b{color:var(--accent);}
+  .think{background:#fff7ed; border-left:4px solid #fb923c; padding:10px 14px; border-radius:0 8px 8px 0; font-size:14px; margin-top:8px;}
+  .note{margin-top:18px; background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d; padding:12px 16px; border-radius:8px; font-size:13px;}
+  @media print{body{background:#fff; padding:0;} .page{box-shadow:none; border-radius:0; padding:22px;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="tag">案例探究 · 初中生</span>
+  <h1>国内外气象项目案例（3 个）</h1>
+  <div class="meta">班级气象站 PBL · 课堂讨论素材 ｜ 真实案例（2022–2026）</div>
+
+  <div class="case">
+    <span class="loc cn">中国 · 石家庄</span>
+    <h2>案例 1：二十七中「校园数字气象站」——学生自己造硬件</h2>
+    <p>石家庄市第二十七中学的高二学生，用 Arduino 主控板加 DFRobot 传感器，做出一座能实时显示校园环境的"数字气象站"。</p>
+    <div class="box"><b>他们做了什么：</b>装上温度、湿度、气压、噪声、紫外线、雷电等 <b>11 种传感器</b>，把抽象课本知识变成鲜活的校园真实数据；作品获第 36 届河北省青少年科技创新大赛高中组<b>一等奖</b>。</div>
+    <div class="think">🤔 想一想：我们不需要 11 种传感器，先选「温度+湿度+降水概率」三样就够。他们的"真实校园数据"思路，正是我们班级气象站的目标。</div>
+  </div>
+
+  <div class="case">
+    <span class="loc intl">国际 · NASA / NOAA / NSF</span>
+    <h2>案例 2：GLOBE 计划——学生的天气数据进了真实科研</h2>
+    <p>GLOBE 是由美国 NASA、NOAA、NSF 联合支持的国际科学教育计划，全球 120 多个国家、上万所学校的学生亲自测天气，数据直接进入科研数据库。</p>
+    <div class="box"><b>他们做了什么：</b>德国一所中学的"气候小组"用统一标准，坚持一年多每天测云、温度、气压，累计提交 <b>1 万多条</b>数据；台湾高雄前金国中成立"大气观测团"，<b>365 天不间断</b>观测，学长带学弟传承技术。学生的数据被用来研究真实气候问题。</div>
+    <div class="think">🤔 想一想：如果我们连续几周认真记录，这些数据也能画出"校园天气规律"。坚持，本身就是科学态度。</div>
+  </div>
+
+  <div class="case">
+    <span class="loc intl">美国 · 小学课堂</span>
+    <h2>案例 3：Cedar Grove 小学——拿"实测"和"预报"正面对比</h2>
+    <p>美国马里兰 Cedar Grove 小学三、四年级学生，用 GLOBE 协议采集本校天气数据，并和美国国家气象局（NWS）的官方预报<b>直接对比</b>，研究厄尔尼诺对本地天气的影响。</p>
+    <div class="box"><b>他们做了什么：</b>不是盲信预报，而是用自己的测量去"检验"预报准不准——这正是我们驱动性问题的答案！他们还在科学展上向气象专家展示海报。</div>
+    <div class="think">🤔 想一想：这正是我们记录表里的"预报 vs 实测"一栏的意义。预报不是权威，数据会说话——你也能当一回"天气预报检验员"。</div>
+  </div>
+
+  <div class="note">💡 老师提示：三个案例分别代表「自己造硬件」「数据进入真实科研」「实测检验预报」三种思路。可在 QuickClass 分组讨论：我们班气象站最该学哪一种？鼓励学生把案例里的方法"借"进自己的方案。</div>
+</div>
+</body>
+</html>
