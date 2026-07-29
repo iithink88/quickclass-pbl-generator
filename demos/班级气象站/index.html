@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>班级气象站 PBL · 资源包首页</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#0ea5e9; --soft:#ecfeff; --line:#e5e7eb;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f8fafc; line-height:1.8; padding:36px 16px;}
+  .page{max-width:840px; margin:0 auto; background:#fff; padding:40px 44px; border-radius:14px;
+        box-shadow:0 4px 24px rgba(0,0,0,.06);}
+  h1{font-size:26px; margin:0 0 4px; color:var(--accent);}
+  .meta{color:var(--sub); font-size:13px; margin-bottom:18px;}
+  .q{background:var(--soft); border-left:5px solid var(--accent); padding:16px 20px; border-radius:0 10px 10px 0; font-size:17px; margin:18px 0;}
+  .q b{color:var(--accent);}
+  h2{font-size:19px; margin:26px 0 10px;}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:8px;}
+  .card{display:block; text-decoration:none; color:var(--ink); border:1px solid var(--line);
+        border-radius:12px; padding:16px 18px; transition:.15s; background:#fff;}
+  .card:hover{border-color:var(--accent); box-shadow:0 4px 14px rgba(14,165,233,.12); transform:translateY(-2px);}
+  .card .n{font-size:12px; color:var(--accent); font-weight:bold;}
+  .card .t{font-size:16px; font-weight:bold; margin:4px 0;}
+  .card .d{font-size:13px; color:var(--sub);}
+  .groups{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0;}
+  .g{flex:1; min-width:200px; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:14px;}
+  .g b{color:var(--accent);}
+  .flow{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; font-size:13px;}
+  .flow span{background:#f1f5f9; border-radius:20px; padding:5px 14px;}
+  .flow .arrow{background:none; color:var(--sub); padding:5px 4px;}
+  .dialog{background:#f8fafc; border:1px solid var(--line); border-radius:10px; padding:14px 18px; font-size:14px; margin-top:10px;}
+  .dialog p{margin:6px 0;}
+  .dialog .ai{color:var(--accent);}
+  .note{margin-top:22px; background:#fffbeb; border:1px solid #fde68a; color:#b45309; padding:14px 18px; border-radius:10px; font-size:13.5px;}
+  @media(max-width:600px){.grid{grid-template-columns:1fr;}}
+  @media print{body{background:#fff; padding:0;} .page{box-shadow:none; padding:22px;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>班级气象站 PBL · 资源包</h1>
+  <div class="meta">适用：初中生（信息科技+数学+语文）｜ 设计：WorkBuddy（备课参谋）｜ 落地：QuickClass（探究操场）</div>
+
+  <div class="q">🚩 <b>驱动性问题：</b>天气预报总说不准，体育课还常被雨淋——<strong>我们能不能自己做一个"班级气象站"</strong>，用自己的数据告诉大家今天能不能上体育课？</div>
+
+  <h2>👥 三组分工（4 周完成）</h2>
+  <div class="groups">
+    <div class="g"><b>数据获取组</b>：研究怎么从免费天气 API 拿到温度、湿度、降水概率等数据。</div>
+    <div class="g"><b>数据处理组</b>：解析 JSON，计算平均/趋势，判断"体育课建议"。</div>
+    <div class="g"><b>前端展示组</b>：搭一个网页，把数据可视化，并做出"体育课建议"功能。</div>
+  </div>
+
+  <div class="flow">
+    <span>① 设计项目</span><span class="arrow">→</span>
+    <span>② 准备资源</span><span class="arrow">→</span>
+    <span>③ 课堂探究</span><span class="arrow">→</span>
+    <span>④ 评价反思</span>
+  </div>
+
+  <h2>📦 四份配套资源（点击打开）</h2>
+  <div class="grid">
+    <a class="card" href="01_气象科普文章.html">
+      <div class="n">资源 1 · 课前阅读</div>
+      <div class="t">气象站科普文章</div>
+      <div class="d">约 500 字，初中生适读，讲清"为什么自己测天气更有意义"。QuickClass 课前预习材料。</div>
+    </a>
+    <a class="card" href="02_气象站基础知识.html">
+      <div class="n">资源 2 · 探究工具</div>
+      <div class="t">气象站基础与简易方法</div>
+      <div class="d">测哪些数据、免费数据源（Open-Meteo 免Key）、API/JSON 概念、体育课建议逻辑、无编程版做法。</div>
+    </a>
+    <a class="card" href="03_国内外气象项目案例.html">
+      <div class="n">资源 3 · 案例探究</div>
+      <div class="t">国内外气象项目案例（3 个）</div>
+      <div class="d">石家庄二十七中 Arduino 气象站、NASA 的 GLOBE 计划、美国小学实测 vs 预报对比。</div>
+    </a>
+    <a class="card" href="04_气象数据记录表.html">
+      <div class="n">资源 4 · 数据模板</div>
+      <div class="t">班级气象数据记录表</div>
+      <div class="d">打印版，含每日温/湿/降水概率/风速 + 体育课建议 + 预报对比区。</div>
+    </a>
+  </div>
+
+  <h2>🧭 QuickClass 里怎么用（老师参考）</h2>
+  <ul>
+    <li><b>课前摸底：</b>在 QuickClass 设三问——「什么是天气 API？一句话解释」「你知道哪些免费天气数据源？」「做气象站你觉得最难的是哪一步？」AI 批改后，大屏一眼看清谁有编程底子、谁零基础，据此分组。</li>
+    <li><b>课中苏格拉底引导：</b>以"数据获取组卡在 API"为例，AI 不直接给答案，用类比带学生自己发现——</li>
+  </ul>
+  <div class="dialog">
+    <p class="ai">AI：你们想获取今天的温度，第一步要做什么？</p>
+    <p>学生：打开天气网站？</p>
+    <p class="ai">AI：对，但想让程序自动获取呢？你去银行取钱要带什么？</p>
+    <p>学生：银行卡？</p>
+    <p class="ai">AI：对。程序去"天气银行"取数据也需要一张"卡"，它叫什么？</p>
+    <p>学生：API Key？</p>
+    <p class="ai">AI：非常棒！去注册一个免费天气平台的 Key 吧。</p>
+  </div>
+  <ul>
+    <li><b>成果提交：</b>学生在 QuickClass 提交网页链接 / 报告 / 演示视频，AI 按标准给初步反馈；老师一键汇总投大屏，全班共评。</li>
+    <li><b>课后评价：</b>上传作品到 WorkBuddy，按「问题清晰度 / 数据完整性 / 方案可行性 / 协作 / 展示」五维打分。</li>
+  </ul>
+
+  <div class="note">📌 说明：本文档与配套资源由 WorkBuddy 按「WorkBuddy+QuickClass 双引擎落地 PBL」方法论生成，可直接用于初中《班级气象站》项目式学习。案例来自 2022–2026 年公开报道与论文，可放心引用。</div>
+</div>
+</body>
+</html>
