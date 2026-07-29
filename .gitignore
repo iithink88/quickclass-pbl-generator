@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets / local config
+config.json
+.env
+*.env
+.env.*
+credentials.json
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Build output
+dist/
+build/
