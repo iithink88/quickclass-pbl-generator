@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分贝测量基础与简易方法</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#2563eb; --soft:#eff6ff; --line:#e5e7eb;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f8fafc; line-height:1.85; padding:32px 16px;}
+  .page{max-width:820px; margin:0 auto; background:#fff; padding:40px 44px; border-radius:14px;
+        box-shadow:0 4px 24px rgba(0,0,0,.06);}
+  h1{font-size:25px; margin:0 0 6px; color:var(--accent);}
+  .meta{color:var(--sub); font-size:13px; margin-bottom:22px; padding-bottom:14px; border-bottom:1px dashed var(--line);}
+  h2{font-size:18px; margin:26px 0 10px; color:var(--accent);}
+  p,li{font-size:15.5px;}
+  .tag{display:inline-block; background:var(--accent); color:#fff; font-size:12px; padding:2px 10px; border-radius:20px; margin-bottom:8px;}
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px;}
+  th,td{border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top;}
+  th{background:var(--soft); color:var(--accent);}
+  .step{background:#f9fafb; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0;}
+  .step b{color:var(--accent);}
+  .warn{background:#fffbeb; border:1px solid #fde68a; color:#b45309; padding:12px 16px; border-radius:8px; font-size:14px; margin-top:18px;}
+  .note{margin-top:18px; background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d; padding:12px 16px; border-radius:8px; font-size:13px;}
+  ul{padding-left:22px;}
+  @media print{body{background:#fff; padding:0;} .page{box-shadow:none; border-radius:0; padding:22px;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="tag">探究工具 · 六年级</span>
+  <h1>分贝测量基础与简易方法</h1>
+  <div class="meta">校园噪音调查 PBL · 学生探究配套知识 ｜ 建议打印或投屏</div>
+
+  <h2>一、什么是「分贝（dB）」？</h2>
+  <p>分贝是科学家用来给<strong>声音响度</strong>打分的单位。它有个特别的地方：不是「线性的」。声音每升高 10 分贝，我们听起来大约<strong>响了一倍</strong>；升高 20 分贝，听起来响了约 4 倍。所以我们比较噪音时，不能简单相减，要记住「分贝越大，吵度涨得越快」。</p>
+  <p>我们平时说的分贝，准确的写法是 <strong>dBA（A 计权）</strong>，它是按人耳的听觉特点「修正」过的数值，比单纯的分贝更接近我们真实听到的吵闹程度。测量时记得选「A 计权 / dBA」。</p>
+
+  <h2>二、常见声音分贝对照表</h2>
+  <table>
+    <tr><th>声音来源</th><th>大约分贝</th><th>给我们的感觉</th></tr>
+    <tr><td>树叶沙沙、悄悄话</td><td>20–30 dB</td><td>很安静</td></tr>
+    <tr><td>图书馆、安静教室</td><td>35–45 dB</td><td>舒适，适合学习</td></tr>
+    <tr><td>正常对话、普通课堂</td><td>55–65 dB</td><td>正常</td></tr>
+    <tr><td>热闹课间走廊、食堂</td><td>70–80 dB</td><td>有点吵，难集中</td></tr>
+    <tr><td>马路边、闹钟响</td><td>80–90 dB</td><td>明显吵，久了伤耳</td></tr>
+    <tr><td>装修电钻、锣鼓</td><td>100–110 dB</td><td>很刺耳</td></tr>
+    <tr><td>鞭炮、飞机起飞</td><td>120 dB 以上</td><td>痛，必须保护耳朵</td></tr>
+  </table>
+  <p class="warn">⚠️ 安全红线：长期待在 <strong>85 分贝以上</strong>的环境会损伤听力；超过 120 分贝可能瞬间伤耳。测量时<strong>不要对着麦克风大喊</strong>，也别在噪音很大的地方久留。</p>
+
+  <h2>三、三种简易测量方法</h2>
+
+  <div class="step">
+    <p><b>方法 1：手机 / 平板 App 法（最推荐学生用）</b></p>
+    <ul>
+      <li>在应用商店搜索「分贝仪」「噪音检测」「Sound Meter」等关键词，下载一个评价好的免费 App。</li>
+      <li>打开后把手机平放在待测位置，等数字稳定再读数（看「dB(A)」或「LAeq」）。</li>
+      <li><strong>注意：</strong>手机麦克风上限约 100 dB，且不如专业仪器准，但用来<strong>比较不同地点谁更吵</strong>完全够用。</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <p><b>方法 2：专业声级计（学校实验室若有）</b></p>
+    <ul>
+      <li>按下开关，选「A 计权」「慢响应（SLOW）」。</li>
+      <li>把仪器举到离地约 1.2 米（耳朵高度），屏幕直接显示分贝。</li>
+      <li>适合做「标准测量」，和手机 App 结果可互相印证。</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <p><b>方法 3：类比判断法（没有仪器时）</b></p>
+    <ul>
+      <li>对照上面的「声音分贝表」，用耳朵估一估：能轻松聊天≈60 dB，得提高嗓门≈75 dB，得捂耳朵≈90 dB 以上。</li>
+      <li>只能做粗略判断，真实数据还是要用仪器测。</li>
+    </ul>
+  </div>
+
+  <h2>四、测量小规范（让数据能比、能信）</h2>
+  <ul>
+    <li><strong>距离一致：</strong>测同一类地点时，仪器离声源都保持相同距离（如 1 米）。</li>
+    <li><strong>高度一致：</strong>举到耳朵高度（约 1.2 米），别贴地也别举太高。</li>
+    <li><strong>避开干扰：</strong>远离墙壁反射、别让风吹到麦克风、别用手捂住麦克风。</li>
+    <li><strong>多次取平均：</strong>同一地点测 3 次，取中间值或平均值，更可靠。</li>
+    <li><strong>记下情境：</strong>同时写清时间、地点、当时在干什么（上课 / 课间 / 轻轨经过），否则数字没意义。</li>
+  </ul>
+
+  <div class="note">💡 老师提示：本页可与「04_噪音数据记录表」配合使用。在 QuickClass 课中探究环节，让学生按上面的规范分组测量，AI 用提问引导他们思考「为什么这个地点更吵」。</div>
+</div>
+</body>
+</html>
