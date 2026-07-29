@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校园噪音数据记录表</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#2563eb; --line:#9ca3af;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f1f5f9; line-height:1.6; padding:24px 12px;}
+  .sheet{max-width:900px; margin:0 auto; background:#fff; padding:28px 32px; border-radius:10px;}
+  h1{font-size:22px; text-align:center; margin:0 0 4px; color:var(--accent);}
+  .sub{text-align:center; color:var(--sub); font-size:13px; margin-bottom:6px;}
+  .info{display:flex; flex-wrap:wrap; gap:18px; font-size:14px; margin:14px 0 18px;
+        border:1px solid var(--line); border-radius:8px; padding:10px 16px;}
+  .info b{color:var(--accent);}
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:0; text-align:center; vertical-align:middle;}
+  th{background:#eff6ff; color:var(--accent); font-weight:bold; padding:10px 6px;}
+  /* handwriting rows */
+  .hw{height:40px;}
+  td .cell{display:block; height:100%; min-height:40px; padding:6px 8px; text-align:center;}
+  .col-loc{width:14%;} .col-time{width:13%;} .col-sit{width:18%;}
+  .col-db{width:11%;} .col-over{width:10%;} .col-find{width:34%;}
+  .summary{margin-top:18px; border:1px solid var(--line); border-radius:8px; padding:14px 18px; font-size:14.5px;}
+  .summary div{margin:8px 0;}
+  .summary .line{border-bottom:1px solid var(--line); display:inline-block; min-width:200px; height:26px;}
+  .tip{margin-top:14px; font-size:12.5px; color:var(--sub);}
+  .tip b{color:var(--accent);}
+  @media print{body{background:#fff; padding:0;} .sheet{box-shadow:none; border-radius:0; padding:14px;}}
+  @page{size:A4; margin:14mm;}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1>校园噪音数据记录表</h1>
+  <div class="sub">校园噪音调查 PBL · 小组测量记录模板（每人 / 每组一份）</div>
+
+  <div class="info">
+    <span>小组：<b>________</b></span>
+    <span>记录人：<b>________</b></span>
+    <span>测量日期：<b>____年__月__日</b></span>
+    <span>使用工具：<b>□手机App　□声级计</b></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="col-loc">序号</th>
+        <th class="col-loc">测量地点</th>
+        <th class="col-time">测量时段</th>
+        <th class="col-sit">当时情况（上课/课间/轻轨经过…）</th>
+        <th class="col-db">分贝值<br>dB(A)</th>
+        <th class="col-over">是否超标<br>（&gt;70dB）</th>
+        <th class="col-find">我的发现 / 改进建议</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div class="summary">
+    <div>① 今天测得最吵的地点是：<span class="line"></span>，分贝约 <span class="line" style="min-width:90px"></span> dB。</div>
+    <div>② 今天测得最安静的地点是：<span class="line"></span>，分贝约 <span class="line" style="min-width:90px"></span> dB。</div>
+    <div>③ 所有测量点的平均约是：<span class="line" style="min-width:90px"></span> dB。</div>
+    <div>④ 我们想出的降噪办法：<span class="line"></span></div>
+  </div>
+
+  <div class="tip">
+    <b>填写说明：</b>① 每个地点测 3 次取中间值填在「分贝值」；② 仪器离地约 1.2 米、离声源约 1 米；③ 同一地点不同情况要分开记（如「课间」和「上课」各一行）；④ 「是否超标」超过 70 dB 打√。可打印多份，或把数据直接录入电脑做图表。
+  </div>
+</div>
+
+<script>
+  // 自动生成 15 行手写空格
+  const tbody = document.getElementById('rows');
+  for(let i=1;i<=15;i++){
+    const tr=document.createElement('tr');
+    tr.className='hw';
+    tr.innerHTML =
+      '<td class="hw"><span class="cell">'+i+'</span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>';
+    tbody.appendChild(tr);
+  }
+</script>
+</body>
+</html>
