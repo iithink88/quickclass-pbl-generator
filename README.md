@@ -37,6 +37,17 @@
 
 技能会：联网核实 3 个真实案例 → 写一个 spec JSON → 用 `scripts/build_pack.py` 生成 5 个 HTML + 5 个 MD → 输出到 `桌面/<项目名>PBL资源/`。
 
+## 示例 DEMO（真实成品）
+
+本仓库 `demos/` 目录放了两个**真实生成**的成品资源包，可直接打开放心参考：
+
+| 文件夹 | 主题 | 学段 | 说明 |
+|---|---|---|---|
+| `demos/校园噪音调查/` | 校园噪音调查 | 六年级 | 5 个 HTML（含 index 导航） |
+| `demos/班级气象站/` | 班级气象站（信息科技+数学+语文） | 初中 | 5 个 HTML + `md/` 5 个 Markdown（可直接拖进 QuickClass 知识库） |
+
+> 噪音调查包早于 MD 双格式升级，故只有 HTML 版；班级气象站包含完整 HTML + MD 双版，正好展示「上传知识库用 MD、课堂展示用 HTML」的完整用法。
+
 ## 目录结构
 
 ```
@@ -46,7 +57,10 @@ quickclass-pbl-generator/
 ├── LICENSE                  # MIT
 ├── .gitignore               # 排除 __pycache__/、config.json、.env
 ├── scripts/build_pack.py    # spec JSON → 5 个 HTML + 5 个 MD
-└── references/design-system.md  # 共享 CSS、版式规范、字数自检
+├── references/design-system.md  # 共享 CSS、版式规范、字数自检
+└── demos/                   # 真实成品示例
+    ├── 校园噪音调查/         # 六年级 PBL（HTML 版）
+    └── 班级气象站/           # 初中 PBL（HTML + md 双版）
 ```
 
 ## License
