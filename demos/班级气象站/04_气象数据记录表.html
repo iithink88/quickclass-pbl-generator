@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>班级气象数据记录表</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#0ea5e9; --line:#9ca3af;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f1f5f9; line-height:1.6; padding:24px 12px;}
+  .sheet{max-width:940px; margin:0 auto; background:#fff; padding:28px 32px; border-radius:10px;}
+  h1{font-size:22px; text-align:center; margin:0 0 4px; color:var(--accent);}
+  .sub{text-align:center; color:var(--sub); font-size:13px; margin-bottom:6px;}
+  .info{display:flex; flex-wrap:wrap; gap:18px; font-size:14px; margin:14px 0 18px;
+        border:1px solid var(--line); border-radius:8px; padding:10px 16px;}
+  .info b{color:var(--accent);}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th,td{border:1px solid var(--line); padding:0; text-align:center; vertical-align:middle;}
+  th{background:#ecfeff; color:var(--accent); font-weight:bold; padding:9px 4px;}
+  .hw{height:38px;}
+  td .cell{display:block; height:100%; min-height:38px; padding:5px 6px; text-align:center;}
+  .col-n{width:5%;} .col-d{width:11%;} .col-t{width:9%;} .col-w{width:10%;}
+  .col-tp{width:8%;} .col-h{width:8%;} .col-p{width:9%;} .col-ws{width:8%;}
+  .col-b{width:9%;} .col-ad{width:13%;} .col-r{width:10%;}
+  .cmp{margin-top:18px; border:1px solid var(--line); border-radius:8px; padding:14px 18px; font-size:14px;}
+  .cmp div{margin:7px 0;}
+  .cmp .line{border-bottom:1px solid var(--line); display:inline-block; min-width:200px; height:24px;}
+  .tip{margin-top:14px; font-size:12.5px; color:var(--sub);}
+  .tip b{color:var(--accent);}
+  @media print{body{background:#fff; padding:0;} .sheet{box-shadow:none; border-radius:0; padding:14px;}}
+  @page{size:A4 landscape; margin:12mm;}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <h1>班级气象数据记录表</h1>
+  <div class="sub">班级气象站 PBL · 小组测量记录模板（每人 / 每组一份，建议连续记录 2 周）</div>
+
+  <div class="info">
+    <span>小组：<b>________</b></span>
+    <span>记录人：<b>________</b></span>
+    <span>记录周期：<b>__月__日 ~ __月__日</b></span>
+    <span>数据来源：<b>□Open-Meteo　□手机App　□实测</b></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="col-n">序号</th>
+        <th class="col-d">日期</th>
+        <th class="col-t">时段</th>
+        <th class="col-w">天气现象</th>
+        <th class="col-tp">气温<br>℃</th>
+        <th class="col-h">湿度<br>%</th>
+        <th class="col-p">降水概率<br>%</th>
+        <th class="col-ws">风速</th>
+        <th class="col-b">气压<br>hPa</th>
+        <th class="col-ad">我们的"体育课建议"</th>
+        <th class="col-r">备注</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div class="cmp">
+    <div>① 两周里最热的一天：<span class="line"></span> ℃；最冷的一天：<span class="line" style="min-width:120px"></span> ℃。</div>
+    <div>② 降水概率最高的一天：<span class="line"></span> %，我们给出的建议是：<span class="line"></span>。</div>
+    <div>③ <b>预报 vs 实测对比：</b>挑 3 天，把"天气预报说的降水概率"和"我们记录的实际天气"对照，看看预报准不准？<span class="line"></span></div>
+    <div>④ 我们的发现 / 给学校的建议：<span class="line"></span></div>
+  </div>
+
+  <div class="tip">
+    <b>填写说明：</b>① 每天固定时段（如早读前、放学后）各记一次；② 气温/湿度/降水概率可从 Open-Meteo 或手机天气 App 读取，实测组用温度计/湿度计；③ "体育课建议"按规则填：降水概率&gt;50%→室内/带伞，气温&gt;35℃或&lt;0℃→避免剧烈运动，否则→正常户外；④ "预报vs实测"栏用来回应驱动问题"天气预报准不准"。可打印多份或录入电脑画图。
+  </div>
+</div>
+
+<script>
+  const tbody = document.getElementById('rows');
+  for(let i=1;i<=14;i++){
+    const tr=document.createElement('tr');
+    tr.className='hw';
+    tr.innerHTML =
+      '<td class="hw"><span class="cell">'+i+'</span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>'+
+      '<td class="hw"><span class="cell"></span></td>';
+    tbody.appendChild(tr);
+  }
+</script>
+</body>
+</html>
