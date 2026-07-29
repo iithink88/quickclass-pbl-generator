@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>气象站基础与简易方法</title>
+<style>
+  :root{--ink:#1f2937; --sub:#6b7280; --accent:#0ea5e9; --soft:#ecfeff; --line:#e5e7eb;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Microsoft YaHei","微软雅黑","PingFang SC",sans-serif;
+       color:var(--ink); background:#f8fafc; line-height:1.85; padding:32px 16px;}
+  .page{max-width:840px; margin:0 auto; background:#fff; padding:40px 44px; border-radius:14px;
+        box-shadow:0 4px 24px rgba(0,0,0,.06);}
+  h1{font-size:24px; margin:0 0 6px; color:var(--accent);}
+  .meta{color:var(--sub); font-size:13px; margin-bottom:20px; padding-bottom:12px; border-bottom:1px dashed var(--line);}
+  h2{font-size:18px; color:var(--accent); margin:24px 0 8px; border-left:4px solid var(--accent); padding-left:10px;}
+  p,li{font-size:15px;}
+  table{width:100%; border-collapse:collapse; margin:10px 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--soft); color:var(--accent);}
+  .box{background:var(--soft); border-radius:8px; padding:12px 16px; margin:12px 0; font-size:14.5px;}
+  .box b{color:var(--accent);}
+  code{background:#f1f5f9; border-radius:4px; padding:1px 6px; font-size:13px; color:#be185d;}
+  pre{background:#0f172a; color:#e2e8f0; padding:12px 14px; border-radius:8px; overflow:auto; font-size:12.5px; line-height:1.5;}
+  .tag{display:inline-block; background:var(--accent); color:#fff; font-size:12px; padding:2px 10px; border-radius:20px; margin-bottom:10px;}
+  .analogy{background:#fff7ed; border-left:4px solid #fb923c; padding:10px 14px; border-radius:0 8px 8px 0; font-size:14px; margin:10px 0;}
+  .note{margin-top:18px; background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d; padding:12px 16px; border-radius:8px; font-size:13px;}
+  @media print{body{background:#fff; padding:0;} .page{box-shadow:none; border-radius:0; padding:22px;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="tag">探究工具 · 初中生</span>
+  <h1>气象站基础与简易方法</h1>
+  <div class="meta">班级气象站 PBL · 课堂探究卡片</div>
+
+  <h2>一、我们要测哪些数据？</h2>
+  <table>
+    <tr><th>数据</th><th>含义</th><th>对"体育课建议"的作用</th></tr>
+    <tr><td>气温（℃）</td><td>空气冷热</td><td>太热(&gt;35℃)建议避开暴晒</td></tr>
+    <tr><td>湿度（%）</td><td>空气干湿</td><td>闷热时运动易中暑</td></tr>
+    <tr><td>降水概率（%）</td><td>下雨可能性</td><td>&gt;50% 建议室内或带伞</td></tr>
+    <tr><td>风速</td><td>空气流动快慢</td><td>大风天不宜投掷类活动</td></tr>
+    <tr><td>气压（hPa）</td><td>空气"重量"</td><td>连续下降常预示变天</td></tr>
+    <tr><td>天气现象</td><td>晴/阴/雨/雪</td><td>最直观的判断依据</td></tr>
+  </table>
+
+  <h2>二、去哪拿数据？免费数据源</h2>
+  <div class="box"><b>首推：Open-Meteo（https://open-meteo.com）</b>——<b>完全免费、无需注册、不用 API Key</b>，最适合课堂。直接拼一个网址就能拿到 JSON 数据，初中生也能用。</div>
+  <ul>
+    <li><b>和风天气 / 彩云天气</b>：国内数据细，但需要注册拿到 API Key（适合进阶组）。</li>
+    <li><b>中国天气网</b>：可直接查，但机器读取不方便。</li>
+    <li><b>手机天气 App</b>：无编程时，人工读数填表也完全可行。</li>
+  </ul>
+
+  <h2>三、API / API Key / JSON 是什么？</h2>
+  <div class="analogy">🏦 <b>类比（来自 QuickClass 苏格拉底引导）：</b>天气数据像一个"天气银行"。程序想去取数据，得先有张"卡"——这张卡就叫 <b>API Key</b>。网站地址（URL）是"银行地址"，返回的一串文字（JSON）就是"吐出来的钞票清单"。</div>
+  <p>JSON 长这样（一看就懂）：</p>
+  <pre>{
+  "temperature": 26.5,
+  "humidity": 70,
+  "precipitation_probability": 40
+}</pre>
+  <p>程序读 JSON，就是从中"取出" <code>temperature</code> 等数值，显示到网页上。</p>
+
+  <h2>四、"体育课建议"怎么算？</h2>
+  <div class="box">最简单的规则（数据处理组可用）：<br>
+  • 若 <b>降水概率 &gt; 50%</b> → "建议室内活动 / 记得带伞"<br>
+  • 若 <b>气温 &gt; 35℃ 或 &lt; 0℃</b> → "避免剧烈运动，注意防暑/保暖"<br>
+  • 若 <b>风速过大</b> → "不宜投掷、球类 outdoor"<br>
+  • 否则 → "天气不错，正常户外体育课 🟢"</div>
+
+  <h2>五、两条路线（按小组能力选）</h2>
+  <p><b>路线 A · 编程版（信息科技融合）：</b>数据获取组用 Open-Meteo 取数 → 数据处理组解析 JSON、算建议 → 前端展示组用 HTML+JS 做一个网页，显示实时数据和"体育课建议"按钮。</p>
+  <p><b>路线 B · 无编程版（人人可上手）：</b>用温度计、湿度计、雨量筒在校园实测，或读手机天气 App，把数字填进「资源 4 记录表」，再用 Excel/画图工具做一周曲线。数学统计、语文报告照做。</p>
+
+  <div class="note">💡 老师提示：零基础班级建议全员走路线 B 打底，有编程兴趣的小组再挑战路线 A；两组最后都要交"数据+分析+建议+报告"，正好覆盖数学与语文。</div>
+</div>
+</body>
+</html>
