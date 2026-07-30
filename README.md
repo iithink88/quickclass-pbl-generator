@@ -2,7 +2,7 @@
 
 为 **QuickClass** 课堂一键生成 PBL（项目式学习）完整资源包的 WorkBuddy 技能。
 
-只要对学生说一句「生成一个 ___ 的 PBL，在 QuickClass 上用的」，技能就会自动产出一套结构统一、可直接上课 + 上传知识库的资源：
+只要对AI说一句「生成一个 ___ 的 PBL，在 QuickClass 上用的」，技能就会自动产出一套结构统一、可直接上课 + 上传知识库的资源：
 
 - `index.html` + `01~04_*.html` —— 课堂展示 / 打印版（主题色统一、A4 打印友好）
 - `md/00_首页导航.md` + `md/01~04_*.md` —— **Markdown 版**，直接拖进 QuickClass 知识库（QuickClass 知识库只收 `.md/.markdown/.txt`）
